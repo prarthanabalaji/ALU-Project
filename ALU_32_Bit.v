@@ -20,6 +20,8 @@ localparam XOR = 6;
 localparam XNOR = 7;
 localparam MUL = 8;
 localparam DIV = 9;
+localparam LSHIFT = 10;
+localparam RSHIFT = 11;
 
 // what about left right shift, greater equal to comparison, multiplication division
 
@@ -35,6 +37,8 @@ localparam DIV = 9;
             XNOR: result= ~(a ^ b); // Bitwise XNOR
             MUL: result = a * b; // Bitwise MUL 
             DIV: result = a / b; // Bitwise DIV
+            LSHIFT: result = a << b; // Logical left shift
+            RSHIFT: result = a >> b; // Logical right shift
             default: result = 0;      // Default case
         endcase
     end

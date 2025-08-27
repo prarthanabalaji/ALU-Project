@@ -7,11 +7,9 @@ module ALU_32_Bit_Testbench;
     reg [3:0] op_select;
     wire [31:0] result;
  
- //
     ALU_32_Bit #(.WIDTH(16), .NUM_OPS(8)) 
     
     alu_16_bit_inst ( 
-        // in reference to one copy of the design that we are testing
         .a(a),
         .b(b),
         .op_select(op_select),
@@ -50,13 +48,21 @@ module ALU_32_Bit_Testbench;
         // Test Bitwise XNOR
         a = 16'hAAAA; b = 16'h5555; op_select = 3'b111;
         #10; $display("XNOR: ~(%h ^ %h) = %h", a, b, result);
+
+        // Test Logical Left Shift
+        a = 16'h000F; b = 16'd2; op_select = 4'b1010;
+        #10; $display("LSHIFT: %h << %0d = %h", a, b, result);
+
+        // Test Logical Right Shift
+        a = 16'h00F0; b = 16'd2; op_select = 4'b1011;
+        #10; $display("RSHIFT: %h >> %0d = %h", a, b, result);
  
         $finish;
     end
  
     initial begin
         $dumpfile("My_ALU_Test.vcd"); 
-        $dumpvars(0, ALU_32_Bit_Testbench); // 0 is to include all instances (dumping waves)
+        $dumpvars(0, ALU_32_Bit_Testbench);
     end
  
 endmodule
