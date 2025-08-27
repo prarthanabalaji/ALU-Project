@@ -21,5 +21,5 @@ This project began with writing a basic 4 bit full adder module and building a c
   - Bitwise Logic: AND, OR, NAND, NOR, XOR, XNOR
   - Shifts: Left Shift, Right Shift
 - Parameterized module allows scalable bit-widths
-- Used Icarus Verilog (`iverilog` and `vvp`)** for simulation
-- Generated VCD waveforms with `$dumpfile` and `$dumpvars` for visual debugging
+- Used Icarus Verilog (iverilog and vvp) for simulation
+- Generated VCD waveforms with $dumpfile and $dumpvars for visual debugging
