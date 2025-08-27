@@ -23,7 +23,6 @@ localparam DIV = 9;
 localparam LSHIFT = 10;
 localparam RSHIFT = 11;
 
-// what about left right shift, greater equal to comparison, multiplication division
 
     always @(*) begin
         case (op_select)
